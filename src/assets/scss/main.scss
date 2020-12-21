@@ -263,8 +263,13 @@ h6, .h6 {
     p,
     span:not(.token),
     li {
-      @apply tracking-wider leading-relaxed font-normal text-gray-500;
+      // @apply tracking-wider leading-relaxed font-normal text-gray-500;
+      @apply tracking-wider leading-relaxed font-normal;
       @include font-size(1.1rem);
+    }
+    .gist span {
+      font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace !important;
+      font-size: 10pt !important;
     }
   }
 }
@@ -274,7 +279,8 @@ h6, .h6 {
   p,
   span:not(.token),
   li {
-    @apply tracking-wider leading-relaxed font-normal text-gray-800;
+    // @apply tracking-wider leading-relaxed font-normal text-gray-800;
+    @apply tracking-wider leading-relaxed font-normal;
     @include font-size(1.1rem);
   }
 
@@ -290,6 +296,10 @@ h6, .h6 {
     @apply mt-0;
   }
 
+  .gist span {
+    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace !important;
+    font-size: 10pt !important;
+  }
 }
 
 .post-authors a::after {

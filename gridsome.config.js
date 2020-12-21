@@ -6,7 +6,37 @@
 
 module.exports = {
   siteName: 'Gridsome',
-  siteDescription: "An open-source framework to generate awesome pages",
+  siteDescription: 'An open-source framework to generate awesome pages',
+  siteUrl: 'https://devrel-kr.github.io',
+  pathPrefix: '/gridsome-starter-liebling',
+  titleTemplate: `%s | <siteName>`,
+  icon: 'src/favicon.png',
+
+  transformers: {
+    remark: {
+      plugins: [
+        'remark-autolink-headings',
+        'remark-attr',
+        [ 'gridsome-plugin-remark-prismjs-all', {
+            noInlineHighlight: false,
+            showLineNumbers: false,
+          }
+        ],
+        [ '@noxify/gridsome-plugin-remark-embed', {
+            'enabledProviders': [ 'Youtube', 'Twitter', 'Gist' ],
+            'Twitter': {
+              'hideMedia': false,
+              'theme': 'light'
+            }
+          }
+        ],
+
+        require('./packages/gridsome-plugin-remark-figure')
+      ],
+      processImages: false
+    }
+  },
+
   plugins: [
     {
       use: 'gridsome-plugin-tailwindcss',
@@ -71,24 +101,42 @@ module.exports = {
           fields: ['title', 'category', 'excerpt', 'content']
         }]
       }
+    },
+    {
+      use: '@gridsome/plugin-google-analytics',
+      options: {
+        id: 'UA-123456-7',
+      },
+    },
+    {
+      use: '@gridsome/plugin-sitemap',
+      options: {
+        cacheTime: 600000, // default
+      },
+    },
+    {
+      use: 'gridsome-plugin-rss',
+      options: {
+        contentTypeName: 'Blog',
+        feedOptions: {
+          title: 'Gridsome',
+          feed_url: 'https://devrel-kr.github.io/gridsome-starter-liebling/feed.xml',
+          site_url: 'https://devrel-kr.github.io/gridsome-starter-liebling',
+        },
+        feedItemOptions: node => ({
+          title: node.title,
+          description: node.description,
+          url: 'https://devrel-kr.github.io/gridsome-starter-liebling' + node.path,
+          author: node.author,
+          date: node.date,
+        }),
+        output: {
+          dir: './static',
+          name: 'feed.xml',
+        },
+      },
     }
   ],
-  transformers: {
-    remark: {
-      plugins: [
-        'remark-autolink-headings',
-        'remark-attr',
-        ['gridsome-plugin-remark-prismjs-all', {
-          noInlineHighlight: false,
-          showLineNumbers: false,
-        }],
-        require('./packages/gridsome-plugin-remark-figure')
-      ],
-      
-      processImages: false
-      
-    }
-  },
   templates: {
     Blog: [{
       // path: '/posts/:title'
