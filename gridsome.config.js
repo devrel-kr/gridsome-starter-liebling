@@ -91,7 +91,8 @@ module.exports = {
   },
   templates: {
     Blog: [{
-      path: '/posts/:title'
+      // path: '/posts/:title'
+      path: '/posts/:year/:month/:day/:slug'
     }],
     CustomPage: [{
       path: '/:title',

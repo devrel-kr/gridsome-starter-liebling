@@ -12,10 +12,15 @@
             <g-link
               class="font-medium"
               :to="$page.blog.category.path"
-            >{{ $page.blog.category.title }}</g-link>&nbsp;&middot;&nbsp;
+            >{{ $page.blog.category.title }}</g-link>
+            &nbsp;&middot;&nbsp;
             <time :datetime="$page.blog.datetime">{{ $page.blog.humanTime }}</time>
             &nbsp;&middot;&nbsp;
             {{ $page.blog.timeToRead }} min read
+            <span v-if="$page.blog.canonical_url">
+              &nbsp;&middot;&nbsp;
+              originally posted at <g-link :to="$page.blog.canonical_url" style="font-style: italic;">{{ canonicalSite }}</g-link>.
+            </span>
           </span>
         </section>
       </div>
@@ -130,10 +135,11 @@
       image(width:1600, height:800)
       image_caption
       excerpt
+      description
       content
-      humanTime : created(format:"DD MMMM YYYY")
-      datetime : created(format:"ddd MMM DD YYYY hh:mm:ss zZ")
-      
+      humanTime: date(format:"DD MMMM YYYY")
+      datetime: date(format:"ddd MMM DD YYYY hh:mm:ss zZ")
+      canonical_url
       timeToRead
       tags {
         id
@@ -171,48 +177,46 @@
       edges {
         node {
           title
-      path
-      image(width:1600, height:800)
-      image_caption
-      excerpt
-      content
-      humanTime : created(format:"DD MMMM YYYY")
-      datetime : created(format:"ddd MMM DD YYYY hh:mm:ss zZ")
-      
-      timeToRead
-      tags {
-        id
-        title
-        path
-      }
-      category {
-        id
-        title
-        path
-        belongsTo(limit:4) {
-          totalCount
-          edges {
-            node {
-              ... on Blog {
-                title
-                path
+          path
+          image(width:1600, height:800)
+          image_caption
+          excerpt
+          description
+          content
+          humanTime: date(format:"DD MMMM YYYY")
+          datetime: date(format:"ddd MMM DD YYYY hh:mm:ss zZ")
+          canonical_url
+          timeToRead
+          tags {
+            id
+            title
+            path
+          }
+          category {
+            id
+            title
+            path
+            belongsTo(limit:4) {
+              totalCount
+              edges {
+                node {
+                  ... on Blog {
+                    title
+                    path
+                  }
+                }
               }
             }
           }
-        }
-      }
-      author {
-        id
-        name
-        image
-        path
-      }
+          author {
+            id
+            name
+            image
+            path
+          }
         }
       }
     }
-
-
-    
   }
 </page-query>
 
@@ -226,11 +230,6 @@ export default {
   components: {
     CardItem,
     ContentHeader
-  },
-  metaInfo() {
-    return {
-      title: this.$page.blog.title
-    };
   },
   computed: {
     relatedRecords() {
@@ -246,7 +245,39 @@ export default {
       }
 
       return authors;
+    },
+    canonicalSite() {
+      let canonicalUrl = this.$page.blog.canonical_url;
+      let canonicalSite = new URL(canonicalUrl).host;
+
+      return canonicalSite;
     }
+  },
+  methods: {
+    description(post, length, clamp) {
+      if (post.description) {
+        return post.description
+      }
+
+      length = length || 280
+      clamp = clamp || ' ...'
+      let text = post.content.replace(/<pre(.|\n)*?<\/pre>/gm, '').replace(/<[^>]+>/gm, '')
+
+      return text.length > length ? `${ text.slice(0, length)}${clamp}` : text
+    }
+  },
+  metaInfo() {
+    return {
+      title: this.$page.blog.title,
+      meta: [
+        {
+          key: 'description',
+          name: 'description',
+          content: this.description(this.$page.blog)
+        },
+        { property: "og:description", content: this.description(this.$page.blog) },
+      ]
+    };
   },
   mounted() {
     mediumZoom(".post-content img");
