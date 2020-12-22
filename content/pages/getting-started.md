@@ -232,10 +232,10 @@ function visitor(node) {
 ### 내부 URL ###
 
 ```html
-![Photo by Ingmar Hoogerhoud on Unsplash](./../images/ingmar-hoogerhoud-lm91dJNPRS4-unsplash.jpg)
+![Photo by Ingmar Hoogerhoud on Unsplash](./images/ingmar-hoogerhoud-lm91dJNPRS4-unsplash.jpg)
 ```
 
-![Photo by Ingmar Hoogerhoud on Unsplash](./../images/ingmar-hoogerhoud-lm91dJNPRS4-unsplash.jpg)
+![Photo by Ingmar Hoogerhoud on Unsplash](./images/ingmar-hoogerhoud-lm91dJNPRS4-unsplash.jpg)
 
 
 ## 깃헙 Gist ##
