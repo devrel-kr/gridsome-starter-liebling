@@ -16,33 +16,62 @@
         </div>
         <div class="w-full text-center">
           {{ $page.author.belongsTo.totalCount }} {{ postLabel }}
-          &nbsp;&bull;&nbsp;
-          <a
-            :href="$page.author.facebook"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="text-gray-400 hover:text-white"
-          >
-            <font-awesome :icon="['fab', 'facebook']" />
-          </a>
-          &nbsp;
-          <a
-            :href="$page.author.twitter"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="text-gray-400 hover:text-white"
-          >
-            <font-awesome :icon="['fab', 'twitter']" />
-          </a>
-          &nbsp;
-          <a
-            :href="$page.author.linkedin"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="text-gray-400 hover:text-white"
-          >
-            <font-awesome :icon="['fab', 'linkedin']" />
-          </a>
+          <span v-if="$page.author.github || $page.author.linkedin || $page.author.twitter || $page.author.facebook || $page.author.instagram">&nbsp;&bull;</span>
+          <span v-if="$page.author.github">
+            &nbsp;
+            <a
+              :href="$page.author.github"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="text-gray-400 hover:text-white"
+            >
+              <font-awesome :icon="['fab', 'github']" />
+            </a>
+          </span>
+          <span v-if="$page.author.linkedin">
+            &nbsp;
+            <a
+              :href="$page.author.linkedin"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="text-gray-400 hover:text-white"
+            >
+              <font-awesome :icon="['fab', 'linkedin']" />
+            </a>
+          </span>
+          <span v-if="$page.author.twitter">
+            &nbsp;
+            <a
+              :href="$page.author.twitter"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="text-gray-400 hover:text-white"
+            >
+              <font-awesome :icon="['fab', 'twitter']" />
+            </a>
+          </span>
+          <span v-if="$page.author.facebook">
+            &nbsp;
+            <a
+              :href="$page.author.facebook"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="text-gray-400 hover:text-white"
+            >
+              <font-awesome :icon="['fab', 'facebook']" />
+            </a>
+          </span>
+          <span v-if="$page.author.instagram">
+            &nbsp;
+            <a
+              :href="$page.author.instagram"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="text-gray-400 hover:text-white"
+            >
+              <font-awesome :icon="['fab', 'instagram']" />
+            </a>
+          </span>
         </div>
       </div>
     </content-header>
@@ -75,11 +104,13 @@
       name
       path
       bio
-      image(width:150, height:150)
       cover
-      facebook
-      twitter
+      image(width:150, height:150)
+      github
       linkedin
+      twitter
+      facebook
+      instagram
       belongsTo(perPage: 6, page: $page) @paginate {
         totalCount
         pageInfo {
@@ -95,8 +126,8 @@
               path
               timeToRead
               featured
-              humanTime: created(format: "DD MMM YYYY")
-              datetime: created
+              humanTime: date(format: "DD MMM YYYY")
+              datetime: date
               category {
                 id
                 title

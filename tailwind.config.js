@@ -41,6 +41,7 @@ module.exports = {
     },
     fontFamily: {
       sans: [
+        'Nanum Gothic',
         '"Source Sans Pro"',
         '"Segoe UI"',
         'Roboto',

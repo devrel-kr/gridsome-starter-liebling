@@ -27,7 +27,7 @@
 
 <page-query>
   query($page: Int) {
-    featured: allBlog(limit: 4, filter: { featured: { eq: true } }, sortBy:"created") {
+    featured: allBlog(limit: 4, filter: { featured: { eq: true } }, sortBy:"date") {
       totalCount
       edges {
         node {
@@ -36,8 +36,8 @@
           image(width: 800)
           path
           timeToRead
-          humanTime: created(format: "DD MMM YYYY")
-          datetime: created
+          humanTime: date(format: "DD MMM YYYY")
+          datetime: date
           category {
             id
             title
@@ -52,7 +52,7 @@
         }
       }
     }
-    entries: allBlog(perPage: 6, page: $page, sortBy:"created") @paginate {
+    entries: allBlog(perPage: 6, page: $page, sortBy:"date") @paginate {
       totalCount
       pageInfo {
         totalPages
@@ -66,8 +66,8 @@
           path
           timeToRead
           featured
-          humanTime: created(format: "DD MMM YYYY")
-          datetime: created
+          humanTime: date(format: "DD MMM YYYY")
+          datetime: date
           category {
             id
             title

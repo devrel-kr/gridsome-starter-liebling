@@ -1,12 +1,13 @@
 ---
 title: Monendo decimo referunt supremum
-tags: tag5, tag6
-category: Digital
-excerpt: Mariti Panthoides este, sequuntur iusserat silva et non puerum. Venit vox peto! Vincere ferociaarva.
-created: 2019-06-28
+slug: monendo-decimo-referunt-supremum
+description: Mariti Panthoides este, sequuntur iusserat silva et non puerum. Venit vox peto! Vincere ferociaarva.
+date: 2019-06-28
 image: ./images/qingbao-meng-01_igFr7hd4-unsplash.jpg
 image_caption: Photo by Qingbao Meng on Unsplash
 author: author2
+category: Digital
+tags: tag5, tag6
 featured: true
 ---
 

@@ -8,3 +8,5 @@ dist
 .env.*
 
 Users/marcusreinhardt/Development/gridsome-slow-performance/packages
+
+**/static/*.xml

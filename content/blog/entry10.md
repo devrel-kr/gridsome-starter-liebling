@@ -1,12 +1,13 @@
 ---
 title: Iter vultus quidem pariter caligine inane hanc
-tags: tag3, tag4, tag5
-category: Business
-excerpt: Canache virago, metuendus illo est sibi inlaesos, ubi prior loca coniuge, illi pro. Vincere ferociaarva.
-created: 2019-10-31
+slug: iter-vultus-quidem-pariter-caligine-inane-hanc
+description: Canache virago, metuendus illo est sibi inlaesos, ubi prior loca coniuge, illi pro. Vincere ferociaarva.
+date: 2019-10-31
 image: ./images/sergio-souza-WU6K3Lmq9ok-unsplash.jpg
 image_caption: Photo by Sergio Souza on Unsplash
 author: author3
+category: Business
+tags: tag3, tag4, tag5
 featured: true
 ---
 

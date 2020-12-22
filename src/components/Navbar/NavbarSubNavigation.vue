@@ -124,15 +124,15 @@ query {
       }
     }
   },
-  recent : allBlog(limit: 4, sort: { by: "created", order: DESC }) {
+  recent : allBlog(limit: 4, sort: { by: "date", order: DESC }) {
     edges {
       node {
         id
         title
         path
         image(width:230, height:130)
-        humanTime: created(format: "DD MMM YYYY")
-        datetime: created
+        humanTime: date(format: "DD MMM YYYY")
+        datetime: date
         timeToRead
       }
     }

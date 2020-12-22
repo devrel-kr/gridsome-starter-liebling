@@ -59,4 +59,18 @@ export default function (Vue, {
     Vue.component('v-popover', VPopover)
     Vue.use(InfiniteLoading)
   }
+
+  head.link.push({
+    rel: 'stylesheet',
+    href: 'https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700;800&display=swap'
+  })
+  head.link.push({
+    rel: 'stylesheet',
+    href: 'https://github.githubassets.com/assets/gist-embed-d89dc96f3ab6372bb73ee45cafdd0711.css'
+  })
+
+  head.script.push({
+    src: 'https://platform.twitter.com/widgets.js'
+  })
+
 }
