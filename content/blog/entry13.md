@@ -1,12 +1,13 @@
 ---
 title: Styles
-tags: tag1, tag2
-category: Design
-excerpt: Anxius nec ibimus utque illa circa video est fuit labores alas. Vincere ferociaarva.
-created: 2019-12-24
+slug: styles
+description: Anxius nec ibimus utque illa circa video est fuit labores alas. Vincere ferociaarva.
+date: 2019-12-24
 image: ./images/steven-wong-LcemoNqHIxY-unsplash.jpg
 image_caption: Photo by Steven Wong on Unsplash
 author: author3
+category: Design
+tags: tag1, tag2
 ---
 
 # Heading 1

@@ -71,32 +71,61 @@
                         class="font-light tracking-wider leading-relaxed py-4"
                       >{{ $page.blog.author[0].bio }}</div>
                       <div class>
-                        <a
-                          :href="$page.blog.author[0].facebook"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          class="hover:text-blue-500"
-                        >
-                          <font-awesome :icon="['fab', 'facebook']" />
-                        </a>
-                        &nbsp;
-                        <a
-                          :href="$page.blog.author[0].twitter"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          class="hover:text-blue-500"
-                        >
-                          <font-awesome :icon="['fab', 'twitter']" />
-                        </a>
-                        &nbsp;
-                        <a
-                          :href="$page.blog.author[0].linkedin"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          class="hover:text-blue-500"
-                        >
-                          <font-awesome :icon="['fab', 'linkedin']" />
-                        </a>
+                        <span v-if="$page.blog.author[0].github">
+                          <a
+                            :href="$page.blog.author[0].github"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="hover:text-blue-500"
+                          >
+                            <font-awesome :icon="['fab', 'github']" />
+                          </a>
+                          &nbsp;
+                        </span>
+                        <span v-if="$page.blog.author[0].linkedin">
+                          <a
+                            :href="$page.blog.author[0].linkedin"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="hover:text-blue-500"
+                          >
+                            <font-awesome :icon="['fab', 'linkedin']" />
+                          </a>
+                          &nbsp;
+                        </span>
+                        <span v-if="$page.blog.author[0].twitter">
+                          <a
+                            :href="$page.blog.author[0].twitter"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="hover:text-blue-500"
+                          >
+                            <font-awesome :icon="['fab', 'twitter']" />
+                          </a>
+                          &nbsp;
+                        </span>
+                        <span v-if="$page.blog.author[0].facebook">
+                          <a
+                            :href="$page.blog.author[0].facebook"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="hover:text-blue-500"
+                          >
+                            <font-awesome :icon="['fab', 'facebook']" />
+                          </a>
+                          &nbsp;
+                        </span>
+                        <span v-if="$page.blog.author[0].instagram">
+                          <a
+                            :href="$page.blog.author[0].instagram"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="hover:text-blue-500"
+                          >
+                            <font-awesome :icon="['fab', 'instagram']" />
+                          </a>
+                          &nbsp;
+                        </span>
                       </div>
                     </div>
                   </div>
@@ -134,7 +163,6 @@
       path
       image(width:1600, height:800)
       image_caption
-      excerpt
       description
       content
       humanTime: date(format:"DD MMMM YYYY")
@@ -168,6 +196,11 @@
         image
         path
         bio
+        github
+        linkedin
+        twitter
+        facebook
+        instagram
       }
     }
 
@@ -180,7 +213,6 @@
           path
           image(width:1600, height:800)
           image_caption
-          excerpt
           description
           content
           humanTime: date(format:"DD MMMM YYYY")

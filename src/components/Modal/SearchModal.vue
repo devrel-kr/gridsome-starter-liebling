@@ -42,7 +42,7 @@
                     <h1
                       class="title-font text-xl font-medium text-gray-900 dark:text-gray-400 mb-3"
                     >{{ resultEntry.title }}</h1>
-                    <p class="leading-relaxed mb-5 dark:text-gray-500">{{ resultEntry.node.excerpt }}</p>
+                    <p class="leading-relaxed mb-5 dark:text-gray-500">{{ resultEntry.node.description }}</p>
                   </div>
                 </div>
               </g-link>

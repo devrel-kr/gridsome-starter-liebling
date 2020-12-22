@@ -1,12 +1,13 @@
 ---
 title: Aera exspatiantur impete inplumes plebe capillos est
-tags: tag5, tag6, tag7
-category: Digital
-excerpt: Est ille semper crimen inanes uterque sternitur Syrtis, est. Vincere ferociaarva.
-created: 2019-11-11
+slug: aera-exspatiantur-impete-inplumes-plebe-capillos-est
+description: Est ille semper crimen inanes uterque sternitur Syrtis, est. Vincere ferociaarva.
+date: 2019-11-11
 image: ./images/stephan-cassara-KnAIsBuitGg-unsplash.jpg
 image_caption: Photo by Stephan Cassara on Unsplash
 author: author3
+category: Digital
+tags: tag5, tag6, tag7
 ---
 
 ## Levibus tibi invitam aliisque fluvios quem vel

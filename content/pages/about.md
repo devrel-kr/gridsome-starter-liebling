@@ -1,5 +1,6 @@
 ---
 title: About us
+slug: about-us
 ---
 
 ## Ossa narrat sortita fecerat sit conataque

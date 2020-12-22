@@ -11,8 +11,8 @@
       "external": false
     },
     {
-      "name": "Getting started",
-      "link": "/category/getting-started",
+      "name": "Getting Started",
+      "link": "/getting-started",
       "external": false
     },
     {
@@ -55,7 +55,7 @@
     },
     {
       "name": "RSS",
-      "link": "/rss.xml",
+      "link": "/feed.xml",
       "external": false
     }
   ]

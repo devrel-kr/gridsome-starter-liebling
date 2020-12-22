@@ -88,7 +88,7 @@ module.exports = {
       use: '@gridsome/source-filesystem',
       options: {
         typeName: 'CustomPage',
-        path: './content/pages/*.md'
+        path: './content/pages/**/*.md'
       }
     },
     {
@@ -98,7 +98,7 @@ module.exports = {
         collections: [{
           typeName: 'Blog',
           indexName: 'Blog',
-          fields: ['title', 'category', 'excerpt', 'content']
+          fields: ['title', 'category', 'description', 'content']
         }]
       }
     },
@@ -138,21 +138,23 @@ module.exports = {
     }
   ],
   templates: {
+    Author: [{
+      // path: '/author/:name',
+      path: '/author/:slug',
+      component: '~/templates/Author.vue'
+    }],
     Blog: [{
       // path: '/posts/:title'
       path: '/posts/:year/:month/:day/:slug'
     }],
     CustomPage: [{
-      path: '/:title',
+      // path: '/:title',
+      path: '/:slug',
       component: '~/templates/CustomPage.vue'
     }],
     Category: [{
       path: '/category/:title',
       component: '~/templates/Category.vue'
-    }],
-    Author: [{
-      path: '/author/:name',
-      component: '~/templates/Author.vue'
     }],
     Tag: [{
       path: '/tags/:title',

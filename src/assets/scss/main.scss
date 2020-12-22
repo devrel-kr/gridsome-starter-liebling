@@ -260,6 +260,9 @@ h6, .h6 {
 
 .dark {
   .post-content {
+    p {
+      margin-top: 15px !important;
+    }
     p,
     span:not(.token),
     li {
@@ -275,6 +278,10 @@ h6, .h6 {
 }
 
 .post-content {
+
+  p {
+    margin-top: 15px !important;
+  }
 
   p,
   span:not(.token),

@@ -1,12 +1,13 @@
 ---
 title: Et aequora inanes fortuna non dextra
-tags: tag2, tag3
-category: Digital
-excerpt: Lorem markdownum Hesperus in publica iusta aeternus num removit ille. Vincere ferociaarva.
-created: 2019-03-20
+slug: et-aequora-inanes-fortuna-non-dextra
+description: Lorem markdownum Hesperus in publica iusta aeternus num removit ille. Vincere ferociaarva.
+date: 2019-03-20
 image: ./images/marco-marques-dJ_Zl5LpPto-unsplash.jpg
 image_caption: Photo by Marco Marques on Unsplash
 author: author1
+category: Digital
+tags: tag2, tag3
 ---
 
 ## Concretam matris protinus populos

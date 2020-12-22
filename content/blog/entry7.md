@@ -1,12 +1,13 @@
 ---
 title: Suos novi data gente edaci custodia canes
-tags: tag6, tag7, tag8
-category: Digital
-excerpt: Lorem markdownum ipso iam capillis aether ceperat castra ille pectus. Vincere ferociaarva.
-created: 2019-07-29
+slug: suos-novi-data-gente-edaci-custodia-canes
+description: Lorem markdownum ipso iam capillis aether ceperat castra ille pectus. Vincere ferociaarva.
+date: 2019-07-29
 image: ./images/riccardo-chiarini-2VDa8bnLM8c-unsplash.jpg
 image_caption: Photo by Riccardo Chiarini on Unsplash
 author: author2
+category: Digital
+tags: tag6, tag7, tag8
 ---
 
 ## Est terras non
