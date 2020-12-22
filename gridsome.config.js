@@ -9,7 +9,7 @@ module.exports = {
   siteDescription: 'An open-source framework to generate awesome pages',
   siteUrl: 'https://devrel-kr.github.io',
   pathPrefix: '/gridsome-starter-liebling',
-  titleTemplate: `%s | <siteName>`,
+  titleTemplate: `%s | Gridsome`,
   icon: 'src/favicon.png',
 
   transformers: {
@@ -63,14 +63,14 @@ module.exports = {
       use: '@gridsome/source-filesystem',
       options: {
         typeName: 'Author',
-        path: './content/author/*.md'
+        path: './content/authors/*.md'
       }
     },
     {
       use: '@gridsome/source-filesystem',
       options: {
         typeName: 'Blog',
-        path: './content/blog/**/*.md',
+        path: './content/posts/**/*.md',
         refs: {
           author: 'Author',
           tags: {
