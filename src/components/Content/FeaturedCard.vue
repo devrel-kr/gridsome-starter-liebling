@@ -50,7 +50,7 @@
                 <p>{{ edge.node.description }}</p>
               </div>
 
-              <div class="post-card-footer">
+              <div class="post-card-footer bg-white bg-opacity-70">
                 <p>
                   <time :datetime="edge.node.datetime">{{ edge.node.humanTime }}</time>
                   &nbsp;&bull;&nbsp;
