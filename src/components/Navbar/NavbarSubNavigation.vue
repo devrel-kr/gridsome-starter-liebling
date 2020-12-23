@@ -130,7 +130,7 @@ query {
         id
         title
         path
-        image(width:230, height:130)
+        image
         humanTime: date(format: "DD MMM YYYY")
         datetime: date
         timeToRead

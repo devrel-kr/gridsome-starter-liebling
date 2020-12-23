@@ -33,7 +33,7 @@
         node {
           id
           title
-          image(width: 800)
+          image
           path
           timeToRead
           humanTime: date(format: "DD MMM YYYY")
@@ -62,7 +62,7 @@
         node {
           id
           title
-          image(width: 800)
+          image
           path
           timeToRead
           featured

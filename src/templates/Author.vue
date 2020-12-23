@@ -122,7 +122,7 @@
             ... on Blog {
               id
               title
-              image(width: 800)
+              image
               path
               timeToRead
               featured

@@ -161,7 +161,7 @@
     blog(id: $recordId) {
       title
       path
-      image(width:1600, height:800)
+      image
       image_caption
       description
       content
@@ -211,7 +211,7 @@
         node {
           title
           path
-          image(width:1600, height:800)
+          image
           image_caption
           description
           content
