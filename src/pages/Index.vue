@@ -3,7 +3,7 @@
       <content-header 
         :title="$static.metadata.siteName" 
         :sub="$static.metadata.siteDescription"
-        image="jay-mantri-TFyi0QOx08c-unsplash.jpg">
+        image="hero.png">
       </content-header>
 
       <div class="container mx-auto">
@@ -26,6 +26,7 @@
         node {
           id
           title
+          description
           image
           path
           timeToRead
@@ -55,6 +56,7 @@
         node {
           id
           title
+          description
           image
           path
           timeToRead

@@ -3,7 +3,7 @@ id: author1
 slug: troes-retardat
 name: Troes retardat
 bio: Primis vitae mauris turpis ornare libero odio torquent vehicula proin consequat curabitur mattis
-cover: ./cover/benjamin-voros-Lxq_TyMMHtQ-unsplash.jpg
+cover: ./covers/benjamin-voros-Lxq_TyMMHtQ-unsplash.jpg
 image: ./images/author1.png
 github: https://github.com
 linkedin: https://www.linkedin.com

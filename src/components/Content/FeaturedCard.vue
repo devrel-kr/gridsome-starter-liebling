@@ -46,6 +46,8 @@
                 </p>
 
                 <h3 class="tracking-wider mt-3 mb-3 text-4xl max-w-xl">{{ edge.node.title }}</h3>
+
+                <p>{{ edge.node.description }}</p>
               </div>
 
               <div class="post-card-footer">
