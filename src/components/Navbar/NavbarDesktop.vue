@@ -16,7 +16,7 @@
                 v-if="navItem.external!=true && navItem.children.length <=0"
               >{{ navItem.name}}</g-link>
               <a
-                class="block"
+                class="block py-1"
                 :href="navItem.link"
                 target="_blank"
                 :title="navItem.name"
