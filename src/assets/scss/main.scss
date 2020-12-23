@@ -90,7 +90,8 @@ h6, .h6 {
   }
 
   .post-card-content {
-    @apply absolute top-0 left-0 z-10 mt-20 ml-10 text-white;
+    // @apply absolute top-0 left-0 z-10 mt-20 ml-10 text-white;
+    @apply absolute top-0 left-0 z-10 mt-20 ml-10 text-black;
   }
 
   .post-card-footer {

@@ -40,7 +40,7 @@
                 </g-link>
               </div>
 
-              <div class="post-card-content">
+              <div class="post-card-content bg-white bg-opacity-70">
                 <p class="tracking-wide font-semibold mt-3">
                   <g-link :to="edge.node.category.path">{{ edge.node.category.title }}</g-link>
                 </p>
