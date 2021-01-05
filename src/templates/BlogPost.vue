@@ -253,6 +253,9 @@
 </page-query>
 
 <script>
+import moment from 'moment'
+import config from '~/.temp/config.js'
+import slugify from '@sindresorhus/slugify'
 import CardItem from "~/components/Content/CardItem.vue";
 import ContentHeader from "~/components/Partials/ContentHeader.vue";
 import mediumZoom from "medium-zoom";
@@ -264,6 +267,9 @@ export default {
     ContentHeader
   },
   computed: {
+    config() {
+      return config
+    },
     relatedRecords() {
       return sampleSize(this.$page.related.edges, 2);
     },
@@ -283,6 +289,15 @@ export default {
       let canonicalSite = new URL(canonicalUrl).host;
 
       return canonicalSite;
+    },
+    postUrl () {
+      let siteUrl = this.config.siteUrl
+      let postPath = this.$page.blog.path
+
+      return postPath ? `${siteUrl}${postPath}` : `${siteUrl}/${slugify(this.$page.blog.title)}/`
+    },
+    ogImageUrl () {
+      return this.$page.blog.cover || ''
     }
   },
   methods: {
@@ -299,7 +314,7 @@ export default {
     }
   },
   metaInfo() {
-    return {
+    let metaInfo = {
       title: this.$page.blog.title,
       meta: [
         {
@@ -307,9 +322,32 @@ export default {
           name: 'description',
           content: this.description(this.$page.blog)
         },
+
+        { property: "og:type", content: 'article' },
+        { property: "og:title", content: this.$page.blog.title },
         { property: "og:description", content: this.description(this.$page.blog) },
-      ]
-    };
+        { property: "og:url", content: this.postUrl },
+        { property: "article:published_time", content: moment(this.$page.blog.date).format('YYYY-MM-DD') },
+        { property: "og:image", content: this.ogImageUrl },
+
+        { name: "twitter:card", content: "summary_large_image" },
+        { name: "twitter:title", content: this.$page.blog.title },
+        { name: "twitter:description", content: this.description(this.$page.blog) },
+        { name: "twitter:image", content: this.ogImageUrl },
+      ],
+      link: []
+    }
+
+    if (this.$page.blog.canonical_url) {
+      metaInfo.link.push({
+        rel: 'canonical',
+        href: this.$page.blog.canonical_url
+      })
+    }
+
+    console.log(metaInfo)
+
+    return metaInfo
   },
   mounted() {
     mediumZoom(".post-content img");
