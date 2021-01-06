@@ -90,19 +90,64 @@ query {
 </static-query>
 
 <script>
+import config from '~/.temp/config.js'
 import CardItem from "~/components/Content/CardItem.vue";
 import FeaturedCard from "~/components/Content/FeaturedCard.vue";
 import ContentHeader from "~/components/Partials/ContentHeader.vue";
 
 
 export default {
-  metaInfo: {
-    title: "Hello, world!"
-  },
   components: {
     CardItem,
     FeaturedCard,
     ContentHeader
+  },
+  computed: {
+    config() {
+      return config
+    },
+    siteUrl () {
+      let siteUrl = this.config.siteUrl
+      let pathPrefix = this.config.pathPrefix
+
+      return `${siteUrl}${pathPrefix}`
+    },
+    imageUrl () {
+      return 'https://github.com/devrel-kr/gridsome-starter-liebling/blob/main/src/assets/images/hero.png'
+    },
+    site() {
+      return {
+        title: 'Hello World',
+        description: 'An open-source framework to generate awesome pages',
+        url: this.siteUrl,
+        hero: this.imageUrl
+      }
+    }
+  },
+  metaInfo() {
+    let metaInfo = {
+      title: this.site.title,
+      meta: [
+        {
+          key: 'description',
+          name: 'description',
+          content: this.site.description
+        },
+
+        { property: "og:type", content: 'website' },
+        { property: "og:title", content: this.site.title },
+        { property: "og:description", content: this.site.description },
+        { property: "og:url", content: this.site.url },
+        { property: "og:image", content: this.site.hero },
+
+        { name: "twitter:title", content: this.site.title },
+        { name: "twitter:description", content: this.site.description },
+        { name: "twitter:image", content: this.site.hero },
+      ],
+      link: []
+    }
+
+    return metaInfo
   }
 };
 </script>
