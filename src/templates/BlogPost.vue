@@ -298,7 +298,7 @@ export default {
       return postPath ? `${siteUrl}${pathPrefix}${postPath}` : `${siteUrl}${pathPrefix}/${slugify(this.$page.blog.title)}/`
     },
     ogImageUrl () {
-      return this.$page.blog.cover || ''
+      return this.$page.blog.image || ''
     }
   },
   methods: {
