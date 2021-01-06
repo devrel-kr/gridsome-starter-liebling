@@ -275,6 +275,14 @@ h6, .h6 {
       font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace !important;
       font-size: 10pt !important;
     }
+
+    a {
+      @apply text-blue-500 transition-colors duration-300;
+  
+      &:hover {
+        @apply text-blue-700;
+      }
+    }
   }
 }
 
@@ -307,6 +315,14 @@ h6, .h6 {
   .gist span {
     font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace !important;
     font-size: 10pt !important;
+  }
+
+  a {
+    @apply text-blue-500 transition-colors duration-300;
+
+    &:hover {
+      @apply text-blue-700;
+    }
   }
 }
 
