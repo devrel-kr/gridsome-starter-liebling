@@ -292,9 +292,10 @@ export default {
     },
     postUrl () {
       let siteUrl = this.config.siteUrl
+      let pathPrefix = this.config.pathPrefix
       let postPath = this.$page.blog.path
 
-      return postPath ? `${siteUrl}${postPath}` : `${siteUrl}/${slugify(this.$page.blog.title)}/`
+      return postPath ? `${siteUrl}${pathPrefix}${postPath}` : `${siteUrl}${pathPrefix}/${slugify(this.$page.blog.title)}/`
     },
     ogImageUrl () {
       return this.$page.blog.cover || ''
@@ -344,8 +345,6 @@ export default {
         href: this.$page.blog.canonical_url
       })
     }
-
-    console.log(metaInfo)
 
     return metaInfo
   },
