@@ -9,6 +9,7 @@
       <g-image
         v-if="hasImage && staticImage"
         :src="require(`!!assets-loader!@pageImage/${image}`)"
+        :alt="caption"
         width="1400"
         height="400"
         class="object-cover absolute h-full w-full"
@@ -17,6 +18,7 @@
       <g-image
         v-if="hasImage && !staticImage"
         :src="image"
+        :alt="caption"
         width="1400"
         height="400"
         class="object-cover absolute h-full w-full"
@@ -48,6 +50,10 @@ export default {
     },
     image: {
       type: String | Object,
+      default: null
+    },
+    caption: {
+      type: String,
       default: null
     },
     staticImage: {

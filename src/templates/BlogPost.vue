@@ -1,6 +1,6 @@
 <template>
   <Layout>
-    <content-header :image="$page.blog.image" :staticImage="false" :opacity="0"></content-header>
+    <content-header :image="$page.blog.image" :caption="$page.blog.image_caption" :staticImage="false" :opacity="0"></content-header>
 
     <div class="container sm:pxi-0 mx-auto overflow-x-hidden text-gray-800 dark:text-gray-500">
       <div class="lg:mx-32 md:mx-16 sm:mx-8 mx-4 pt-8">
@@ -139,12 +139,12 @@
 
     <section class="post-related pt-10" v-if="relatedRecords.length>0">
       <div class="container mx-auto">
-        
+
         <div class="text-center">
           <h4 class="font-light my-0">Recommended for you</h4>
         </div>
         <div class="flex flex-wrap justify-center pt-8 pb-8">
-          
+
           <CardItem
             :record="relatedRecord.node"
             v-for="relatedRecord in relatedRecords"
@@ -331,7 +331,9 @@ export default {
         { property: "article:published_time", content: moment(this.$page.blog.date).format('YYYY-MM-DD') },
         { property: "og:image", content: this.ogImageUrl },
 
-        { name: "twitter:card", content: "summary_large_image" },
+        { name: "twitter:card", content: 'summary_large_image' },
+        { name: "twitter:site", content:  '@DevRelKorea'},
+        { name: "twitter:creator", content: '@DevRelKorea' },
         { name: "twitter:title", content: this.$page.blog.title },
         { name: "twitter:description", content: this.description(this.$page.blog) },
         { name: "twitter:image", content: this.ogImageUrl },
